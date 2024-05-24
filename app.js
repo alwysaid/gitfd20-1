@@ -45,6 +45,18 @@ app.get("/cek-error", (req, res) => {
     //throw new Error ('SERVER DOWN')
 })
 
+app.get("/login", (req, res) => {
+    res.send("login page")
+})
+
+app.get("/register", (req, res) => {
+    res.send("register page")
+})
+
+app.get("/home", (req, res) => {
+    res.send("home page")
+})
+
 function errorHandler (err, req, res, next) { //custom middleware
     //console.log(err.code, "==> THIS IS ALWY");
     let messageReturn = ""
@@ -60,6 +72,10 @@ function errorHandler (err, req, res, next) { //custom middleware
 }
 
 app.use(errorHandler)
+
+
+
+
 
 
 app.listen (PORT, () => {
